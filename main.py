@@ -617,6 +617,7 @@ HELP_TEXT = (
     "• /spin\n"
     "• /me\n"
     "• /rank\n"
+    "• /chatrank\n"
     "• /mystats\n"
     "• /pickrank\n"
     "• /giveid USER_ID AMOUNT"
@@ -879,6 +880,9 @@ async def cmd_reset_road(update: Update, context: ContextTypes.DEFAULT_TYPE):
         conn.commit()
     await update.effective_message.reply_text("✅ Road / Pick 기록 초기화 완료")
 
+# =========================
+# MAIN
+# =========================
 def main():
     if not TOKEN:
         raise RuntimeError("TELEGRAM_BOT_TOKEN 환경변수가 비어있음")
